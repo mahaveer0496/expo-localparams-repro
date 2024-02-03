@@ -5,7 +5,7 @@ export default function AuthenticatedIndex() {
   return (
     <Redirect
       href={{
-        pathname: "/(app)/(authenticated)/[account]/(space)/[space]/saves",
+        pathname: "/[account]/[space]/saves",
         params: {
           account: "me",
           space: "home",

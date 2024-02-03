@@ -1,12 +1,15 @@
+import { useLocalSearchParams } from "expo-router";
 import { Stack } from "expo-router";
 import { useEffect, useState } from "react";
 import { ActivityIndicator } from "react-native";
 
 export const unstable_settings = {
-  initialRouteName: "(account)",
+  initialRouteName: "index",
 };
 
 export default function AccountLayout() {
+  if (!useLocalSearchParams<{ account: string }>().account)
+    throw new Error("No account layout");
   return (
     <EnsureStore>
       <Stack />
